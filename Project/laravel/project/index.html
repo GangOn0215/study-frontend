@@ -8,16 +8,14 @@
     <script src="https://kit.fontawesome.com/1490d4417f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/tailwind.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
     <title>Laravel</title>
     <style>
         body {
             height: calc(100% - 6rem);
         }
-
-        .todo-container {
-            min-height: 40rem;
-        }
-
+        
+        /* #E4F6E9 */
     </style>
 </head>
 <body class="antialiased bg-white">
@@ -95,74 +93,28 @@
     <main class="hidden md:flex h-full">
         <aside class="bg-white h-full w-1/6 shadow-sm border border-gray-300"></aside>
         <article class="h-full w-full">
-            <section class="flex h-full w-full justify-center ">
-                <form action="" method="post" class="flex flex-col h-full justify-center w-2/6">
-                    <div class="flex flex-col w-full todo-container justify-center">
-                        <div class="flex w-full h-10 todo-header">
-                            <input type="text" name="subject" class="w-full border border-gray-400 mr-4 p-2">
-                            <button class="w-24  flex-shrink-0 border border-gray-400">추가</button>
-                        </div>
-                        <div class="flex w-full todo-body mt-8">
-                            <ul class="flex flex-col w-full">
-                                <li class="flex w-full items-center justify-between h-10 mb-4">
-                                    <span class="w-5/6 p-2 border border-gray-300 mr-4">1</span>
-                                    <div class="flex items-center justify-around w-24 h-full border">
-                                        <button class="">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </button>
-                                        <button>
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li class="flex w-full items-center justify-between h-10 mb-4">
-                                    <span class="w-5/6 p-2 border border-gray-300 mr-4">2</span>
-                                    <div class="flex items-center justify-around w-24 h-full border">
-                                        <button class="">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </button>
-                                        <button>
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li class="flex w-full items-center justify-between h-10 mb-4">
-                                    <span class="w-5/6 p-2 border border-gray-300 mr-4">3</span>
-                                    <div class="flex items-center justify-around w-24 h-full border">
-                                        <button class="">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </button>
-                                        <button>
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li class="flex w-full items-center justify-between h-10 mb-4">
-                                    <span class="w-5/6 p-2 border border-gray-300 mr-4">4</span>
-                                    <div class="flex items-center justify-around w-24 h-full border">
-                                        <button class="">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </button>
-                                        <button>
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li class="flex w-full items-center justify-between h-10">
-                                    <span class="w-5/6 p-2 border border-gray-300 mr-4">5</span>
-                                    <div class="flex items-center justify-around w-24 h-full border">
-                                        <button class="">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </button>
-                                        <button>
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>
+            <section class="project-container">
+                <div class="items">
+                    <a href="/todos">
+                        todos
+                    </a>
+                </div>
+                <div class="items tiktok">
+                    <a href="/tiktok">
+                        tiktok
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="/instagram">
+                        instagram 
+                    </a>
+                </div>
+                <div class="items">4</div>
+
+                <div class="items">1</div>
+                <div class="items">2</div>
+                <div class="items">3</div>
+                <div class="items">4</div>
             </section>
             <section>
             </section>
@@ -187,6 +139,12 @@
 
         $('#header').on('mouseleave', function(e) {
             navItemList.fadeOut('');
+        });
+
+        $('.project-container .items').on('click', function() {
+            if($(this).find('a').attr('href')) {
+                location.href = $(this).find('a').attr('href');
+            }
         });
     })
 </script>
